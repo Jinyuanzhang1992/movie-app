@@ -91,21 +91,25 @@ fun DetailsScreen(
                     top = innerPadding.calculateTopPadding(), start = 16.dp, end = 16.dp
                 )
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Top
-            ) {
-                Spacer(modifier = Modifier.height(16.dp))
-                MovieRow(movie = newMovieList.first())
-                Spacer(modifier = Modifier.height(8.dp))
-                HorizontalDivider(modifier = Modifier.padding(8.dp))
-                Text(
-                    text = "Movie Images",
-                )
-                HorizontalScrollableImageView(newMovieList)
-            }
-
+            MainContent(newMovieList)
         }
+    }
+}
+
+@Composable
+fun MainContent(newMovieList:List<Movie>) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Top
+    ) {
+        Spacer(modifier = Modifier.height(16.dp))
+        MovieRow(movie = newMovieList.first())
+        Spacer(modifier = Modifier.height(8.dp))
+        HorizontalDivider(modifier = Modifier.padding(8.dp))
+        Text(
+            text = "Movie Images",
+        )
+        HorizontalScrollableImageView(newMovieList)
     }
 }
 

@@ -1,6 +1,5 @@
 package social.bondoo.movieapp.screens.home
 
-import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -53,10 +52,9 @@ fun MainContent(
     movieList: List<Movie> = getMovies()
 ) {
     Column(modifier = Modifier.padding(12.dp)) {
-        LazyColumn() {
+        LazyColumn {
             items(items = movieList) {
                 MovieRow(movie = it) { movie ->
-                    Log.d("movie", "Movie Name: $movie")
                     navController.navigate(route = MovieScreens.DetailsScreen.name+"/$movie")
                 }
                 Spacer(modifier = Modifier.height(8.dp))
