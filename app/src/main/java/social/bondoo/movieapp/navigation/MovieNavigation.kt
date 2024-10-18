@@ -9,7 +9,7 @@ import androidx.navigation.navArgument
 import social.bondoo.movieapp.screens.home.HomeScreen
 import social.bondoo.movieapp.screens.details.DetailsScreen
 
-//导航控制器
+//导航组件
 @Composable
 fun MovieNavigation() {
     val navController = rememberNavController()
